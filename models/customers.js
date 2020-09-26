@@ -11,14 +11,34 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      //customers.hasMany(models.orders);
     }
   };
   customers.init({
-    customer_name: DataTypes.STRING,
-    customer_email: DataTypes.STRING
-  }, {
+    customer_name: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Kindly filled the customer_name,please!"
+        },
+        isEmail : {
+          msg : "please fill with the emal format."
+        }
+      }
+    },
+    password: {
+      type : DataTypes.STRING,
+      validate : {
+        notEmpty : {
+          msg : "Kindly filled the password, thank you!"
+        }
+      }
+    },
+  },{
     sequelize,
     modelName: 'customers',
   });
   return customers;
-};
+}
+
+
