@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const router = Router();
+<<<<<<< HEAD
 const ProductRoutes = require('./product');
 // const PirateRoutes = require('./pirate');
 
@@ -15,3 +16,14 @@ router.use('/products', ProductRoutes);
 
 
 module.exports = router;
+=======
+const customersRoutes = require('./customers')
+
+
+router.get('/', (req,res)=>{
+    res.render('index.ejs')
+});
+router.use('/customers', customersRoutes)
+
+module.exports = router;
+>>>>>>> development
