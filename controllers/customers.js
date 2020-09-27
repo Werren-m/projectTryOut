@@ -66,8 +66,9 @@ class customerController {
 				where: { customer_name, password },
 			});
 			if (result) {
-				res.send(result);
-				res.status(200).json(result);
+				res.send("Welcome " + customer_name);
+                res.status(200).json(result);
+                
 			} else {
 				res.send("Not found!");
 				res.status(404).json(result);

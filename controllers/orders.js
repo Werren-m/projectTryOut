@@ -17,7 +17,6 @@ class OrderController {
 	}
     
     static addFormOrder(req, res) {
-        const id = req.params.id;
 		res.render("addOrder.ejs");
     }
 
